@@ -434,6 +434,15 @@ En apenas trece cortos capítulos, usted descubrirá los pasos para encontrar un
         });
         document.getElementById('orderSummary').value = summary || 'No books selected';
       });
+
+      // Close lightbox when clicking outside the image
+      document.querySelectorAll('.lightbox').forEach(function(lightbox) {
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox) {
+            window.location.hash = '#';
+          }
+        });
+      });
 </script>
 
 </body>
